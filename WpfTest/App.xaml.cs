@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace WpfTest
+namespace WpfTest.DataBinding
 {
     /// <summary>
     /// Interaction logic for App.xaml

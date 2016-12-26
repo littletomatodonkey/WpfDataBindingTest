@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WpfTest
+namespace WpfTest.DataBinding
 {
     class MyBindData : INotifyPropertyChanged
     {
@@ -57,5 +57,55 @@ namespace WpfTest
     class DataSrc
     {
         public static ObservableCollection<MyBindData> ssdata;
+
+        public static ObservableCollection<NodeTree> nodeTrees;
+    }
+
+    class NodeTree
+    {
+        public NodeTree()
+        {
+            this.Nodes = new ObservableCollection<NodeTree>();
+            this.ParentID = -1;
+            this.IsExpanded = false;
+        }
+
+        public ClassType Type { get; set; }
+
+        public string Icon { get; set; }
+
+        public string Name { get; set; }
+
+        public int ID { get; set; }
+
+        public int ParentID { get; set; }
+
+        public bool IsExpanded { get; set; }
+
+        public double Lat{ get; set; }
+        public double Lon{ get; set; }
+        public double Hei{ get; set; }
+        
+        public ObservableCollection<NodeTree> Nodes { get; set; }
+    }
+
+    class ClassOne : NodeTree
+    {
+        public double Radius { get; set; }
+    }
+
+    class ClassTwo : NodeTree
+    {
+        public int Importance { get; set; }
+        public int Time { get; set; }
+    }
+
+    enum ClassType
+    {
+        Root = 0,
+        PClassOne = 1,
+        PClaseeTwo = 2,
+        ClassOne = 4,
+        ClassTwo = 8,
     }
 }

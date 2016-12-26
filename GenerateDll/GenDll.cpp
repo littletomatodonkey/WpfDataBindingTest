@@ -33,13 +33,13 @@ extern "C" __declspec(dllexport) int _stdcall g_DotProd(int a[], int b[], int nu
 	return res;
 }
 
-extern "C" __declspec(dllexport) char* _stdcall g_Char(char *s, int n)
+extern "C" __declspec(dllexport) void _stdcall g_Char(char *s, int n)
 {
 	for (int i = 0; i < n; i++)
 	{
 		cout << s[i];
 	}
 	cout << endl;
-	return s;
+	//return s;
 }
 

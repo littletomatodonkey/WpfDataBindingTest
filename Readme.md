@@ -144,3 +144,6 @@
      * 
      */
 
+### 2016.12.26更新
+* 添加基于UDP的网络通信的项目，包括`UdpClient`与`UdpServer`，`rebuild`项目之后，对应的debug文件夹下会产生相应的`exe`文件。
+* 修改DataGrid中数据的绑定方式及刷新时机
